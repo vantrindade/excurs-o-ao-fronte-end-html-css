@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+        background-color: aliceblue;
+        color: rgb(29, 29, 199);}
+
+        .rounded-circle{
+            transition: all 0.3s ease;
+        }
+        
+        .rounded-circle:hover{
+            background-color: rgba(0, 123, 255, 0.4);
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="container vh-100 d-flex flex-column justify-content-center align-items-center text-center">
+    <h3 class="mb-4">Em que gostaria de foco hoje?</h3>
+
+    <div class="rounded-circle border border-dark d-flex justify-content-center align-items-center text-dark mb-4"
+         style="width:300px; height:300px; font-size:80px; background-color: rgba(0, 123, 255, 0.2);">
+         <h1 id="timer">20:00</h1>
+    </div>
+
+        <button id="botaoTimer" onclick="controlarTimer()" class="btn btn-primary" style="padding: 1em 6em; border-radius: 10em;">começar</button>
+</div>
+
+
+<script src="metodo.js"></script>        
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
