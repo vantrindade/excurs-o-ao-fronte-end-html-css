@@ -1,1 +1,1 @@
-      Uma pequana excursão ao front end antes de percebe a furada que estava me mentedo.
+      Uma pequana excursão ao frontend antes de percebe a furada em que estava me mentedo.
