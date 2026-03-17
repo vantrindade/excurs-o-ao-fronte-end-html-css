@@ -1,14 +1,15 @@
 let tempo = 20 * 60
+let tempoInical = tempo
 let timer = null
 let estado = "stopped"
 
 function controlarTimer(){
 
-    if(estado === "stopped" || estado === "paused"){
+    if(estado === "stopped"){
         iniciar()
     } 
     else if(estado === "running"){
-        pausar()
+        resetar()
     }
 
 }
@@ -17,7 +18,7 @@ function iniciar(){
 
     estado = "running"
 
-    document.getElementById("botaoTimer").innerText = "Pausar"
+    document.getElementById("botaoTimer").innerText = "resetar"
 
     timer = setInterval(() => {
 
@@ -30,7 +31,9 @@ function iniciar(){
         if(tempo <= 0){
             clearInterval(timer)
             estado = "stopped"
-            return
+            tempo = tempoInical
+            document.getElementById("botaoTimer").innerText = "reiniciar"
+
         }
 
         tempo--
@@ -39,12 +42,14 @@ function iniciar(){
 
 }
 
-function pausar(){
-
+function resetar(){
     clearInterval(timer)
-
-    estado = "paused"
-
+    estado = "stopped"
+    tempo = tempoInical
     document.getElementById("botaoTimer").innerText = "Continuar"
-
+    
+    let minutos = Math.floor(tempo / 60)
+    let segundos = tempo % 60
+    document.getElementById("timer").innerText =
+    `${minutos < 10 ? "0" : ""}${minutos}:${segundos < 10 ? "0" : ""}${segundos}`
 }
